@@ -695,16 +695,17 @@ function buildContentSlide(pres, theme, section, idx, style) {
   s.background = { color: 'FFFFFF' };
 
   // Top colored header band
-  s.addShape(pres.ShapeType.rect, {
-    x: 0, y: 0, w: 10, h: 1.0,
-    fill: { color: theme.primary }, line: { color: theme.primary }
-  });
+  s.addShape('rect', {
+  x: 5.9, y: 1.1, w: 3.8, h: 3.9,
+  fill: { color: theme.primary },
+  line: { color: theme.primary },
+  shadow: { type: 'outer', blur: 8, offset: 3, angle: 135, color: '000000', opacity: 0.12 }
+});
 
-  // Left accent stripe in header
-  s.addShape(pres.ShapeType.rect, {
-    x: 0, y: 0, w: 0.12, h: 1.0,
-    fill: { color: theme.accent }, line: { color: theme.accent }
-  });
+s.addShape('rect', {
+  x: 5.9, y: 1.1, w: 0.1, h: 3.9,
+  fill: { color: theme.accent }, line: { color: theme.accent }
+});
 
   // Slide title in header
   s.addText(section.title.toUpperCase(), {
